@@ -1,14 +1,36 @@
 from rest_framework import serializers
-from apps.content_inspector.models import CrawledContent
+from products.models import Product
 
 
-class CrawlContentSerializer(serializers.ModelSerializer):
+class ProductCreateSerializer(serializers.ModelSerializer):
     class Meta:
-        model = CrawledContent
+        model = Product
         fields = [
-            '_id',
-            'title',
-            'siteName',    
-            'origin',
-            'link',
+            'Title',
+            'Description',
+            'price',    
+            'summary',
         ]
+
+
+class ProductDetailSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Product
+        fields = [
+            'Title',
+            'Description',
+            'price',    
+            'summary',
+        ]
+
+
+class ProductListSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Product
+        fields = [
+            'Title',
+            'Description',
+            'price',    
+            'summary',
+        ]
+
